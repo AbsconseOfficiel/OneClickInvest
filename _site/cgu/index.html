@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="/scripts.js" defer></script>
+  </head>
+  <body class="text-white font-text antialiased bg-neutral-950">
+    
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#121212]/65 backdrop-blur-lg">
+  <div class="max-w-screen-2xl mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="/public/uploads/logo.svg" alt="Logo" class="h-8 w-auto hover:scale-105 transition-transform duration-300" />
+      <a href="/" class="text-xl font-bold text-white hover:text-gray-300 transition-colors duration-300">
+        OneClick Invest
+      </a>
+    </div>
+
+    <!-- Navigation links (desktop) -->
+    
+      <ul role="menubar" class="hidden md:flex space-x-6 text-gray-300">
+        
+          
+          
+            
+          
+          <li role="none">
+            <a role="menuitem" href="#sections.card-section" target="" class="hover:text-white transition-colors duration-300">
+              Services
+            </a>
+          </li>
+        
+          
+          
+            
+          
+          <li role="none">
+            <a role="menuitem" href="#sections.steps-section" target="" class="hover:text-white transition-colors duration-300">
+              Fonctionnement
+            </a>
+          </li>
+        
+          
+          
+            
+          
+          <li role="none">
+            <a role="menuitem" href="#sections.price-comparator" target="" class="hover:text-white transition-colors duration-300">
+              Tarif
+            </a>
+          </li>
+        
+          
+          
+            
+          
+          <li role="none">
+            <a role="menuitem" href="#sections.founder-section" target="" class="hover:text-white transition-colors duration-300">
+              Contact
+            </a>
+          </li>
+        
+          
+          
+            
+          
+          <li role="none">
+            <a role="menuitem" href="#sections.faq-section" target="" class="hover:text-white transition-colors duration-300">
+              FAQ
+            </a>
+          </li>
+        
+      </ul>
+    
+
+    <!-- Boutons (Log In & Contact) - Desktop -->
+    <div class="hidden md:flex items-center space-x-4">
+      <button class="group relative flex items-center rounded-md bg-custom-blue px-4 py-2 text-white text-sm font-medium hover:bg-opacity-90 transition-colors duration-300">
+        Connexion
+        <svg class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      <a href="#sections.founder-section" class="group relative flex items-center rounded-md border border-custom-blue px-4 py-2 text-gray-300 text-sm font-medium hover:bg-custom-blue hover:bg-opacity-90 hover:text-white transition-colors duration-300">
+        Contact
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile toggle button -->
+<button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle mobile menu" class="md:hidden fixed bottom-4 right-4 bg-yellow-400 text-black py-3 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white z-50">
+  <svg id="menu-icon" class="h-6 w-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+  </svg>
+</button>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-neutral-900 hidden z-40 flex flex-col items-center justify-center space-y-6 p-6">
+  
+    <ul role="menu" class="w-full flex flex-col items-center space-y-6">
+      
+        
+        
+          
+        
+        <li role="none">
+          <a role="menuitem" href="#sections.card-section" target="" class="text-white text-2xl hover:text-gray-300 transition-colors duration-300 w-full text-center">
+            Services
+          </a>
+        </li>
+      
+        
+        
+          
+        
+        <li role="none">
+          <a role="menuitem" href="#sections.steps-section" target="" class="text-white text-2xl hover:text-gray-300 transition-colors duration-300 w-full text-center">
+            Fonctionnement
+          </a>
+        </li>
+      
+        
+        
+          
+        
+        <li role="none">
+          <a role="menuitem" href="#sections.price-comparator" target="" class="text-white text-2xl hover:text-gray-300 transition-colors duration-300 w-full text-center">
+            Tarif
+          </a>
+        </li>
+      
+        
+        
+          
+        
+        <li role="none">
+          <a role="menuitem" href="#sections.founder-section" target="" class="text-white text-2xl hover:text-gray-300 transition-colors duration-300 w-full text-center">
+            Contact
+          </a>
+        </li>
+      
+        
+        
+          
+        
+        <li role="none">
+          <a role="menuitem" href="#sections.faq-section" target="" class="text-white text-2xl hover:text-gray-300 transition-colors duration-300 w-full text-center">
+            FAQ
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  <!-- Boutons Log In et Contact pour Mobile -->
+  <div class="flex flex-col items-center space-y-4 w-full mt-6">
+    <!-- Bouton Log In -->
+    <button role="menuitem" class="group relative flex items-center justify-center rounded-lg bg-custom-blue px-6 py-3 text-white text-xl shadow-lg hover:bg-opacity-90 transition-colors duration-300 w-3/4">
+      Connexion
+      <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Bouton Contact -->
+    <a href="#sections.founder-section" role="menuitem" class="group relative flex items-center justify-center rounded-lg border border-custom-blue px-6 py-3 text-gray-300 text-xl shadow-lg hover:bg-custom-blue hover:bg-opacity-90 hover:text-white transition-colors duration-300 w-3/4">
+      Contact
+    </a>
+
+  </div>
+</div>
+
+
+
+
+    <main>
+      
+<main class="w-full px-4 pt-10">
+  
+    
+      <!-- Section principale -->
+      <section 
+        id="sections.text-section"
+        class="w-full 
+          my-16 bg-neutral-900 p-10 rounded-3xl	
+          
+          max-w-screen-2xl mx-auto">
+          <div class="container mx-auto">
+    <article class="prose lg:prose-xl prose-invert max-w-none text-neutral-400 text-sm">
+        <h1 class="font-display text-4xl text-white">Conditions Générales d'Utilisation (CGU)</h1>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 1 – <u class="underline">Objet</u></h2>
+<p class="mb-4">Les présentes Conditions Générales d'Utilisation (ci-après les &quot;CGU&quot;) ont pour objet de définir les modalités d'accès et d'utilisation des services proposés par [Votre Nom ou Nom de votre entreprise] (ci-après &quot;le Prestataire&quot;) via son API [Nom de votre API] (ci-après &quot;l'API&quot;).</p>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 2 – <em class="italic">Définitions</em></h2>
+<ul class="list-disc pl-5">
+<li class="py-1">Utilisateur: Toute personne physique ou morale qui utilise l'API.</li>
+<li class="py-1">API: L'interface de programmation permettant l'accès aux services du Prestataire.</li>
+<li class="py-1">Services: L'ensemble des fonctionnalités et services accessibles via l'API.</li>
+</ul>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 3 – <s>Acceptation des CGU</s></h2>
+<ol class="list-decimal pl-5">
+<li class="py-1">L'utilisation de l'API implique l'acceptation sans réserve des présentes CGU par l'Utilisateur.</li>
+</ol>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 4 – Description des services</h2>
+<ul class="list-disc pl-5">
+<li class="py-1">L'API permet à l'Utilisateur d'accéder aux services suivants : [Décrire les fonctionnalités de votre API de manière concise].</li>
+</ul>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 5 – Obligations de l'Utilisateur</h2>
+<p class="mb-4">L'Utilisateur s'engage à :</p>
+<ol class="list-decimal pl-5">
+<li class="py-1">Utiliser l'API conformément aux présentes CGU et à la législation en vigueur.</li>
+<li class="py-1">Ne pas utiliser l'API à des fins illégales ou contraires à l'ordre public.</li>
+<li class="py-1">Ne pas porter atteinte aux droits de tiers.</li>
+<li class="py-1">Ne pas tenter de contourner les mesures de sécurité mises en place par le Prestataire.</li>
+</ol>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 6 – Responsabilité du Prestataire</h2>
+<p class="mb-4">Le Prestataire s'engage à fournir l'API avec diligence et dans les meilleures conditions possibles. Cependant, le Prestataire ne saurait être tenu responsable de tout dommage direct ou indirect résultant de l'utilisation de l'API par l'Utilisateur.</p>
+<h2 class="font-display text-2xl mt-14 mb-4 max-w-[35rem] text-white">Article 7 – Propriété intellectuelle</h2>
+<p class="mb-4">L'ensemble des éléments constitutifs de l'API, notamment les logiciels, les bases de données et les contenus, sont la propriété exclusive du Prestataire ou de ses partenaires et sont protégés par les lois de la propriété intellectuelle.</p>
+<h3>Article 8 – Modification des CGU</h3>
+<p class="mb-4">Le Prestataire se réserve le droit de modifier à tout moment les présentes CGU. Les nouvelles CGU seront applicables dès leur mise en ligne.</p>
+<h4>Article 9 – Loi applicable et juridiction</h4>
+<p class="mb-4">Les présentes CGU sont soumises au droit français. Tout litige relatif à l'interprétation ou à l'exécution des présentes CGU sera soumis à la compétence exclusive des tribunaux de [Ville].</p>
+<p class="mb-4"><a class="hover:text-white transition underline-offset-4 underline" href="https://github.com/AbsconseOfficiel/OneClickInvest">Test lien</a></p>
+<blockquote class="border-l-4 border-custom-blue pl-4 italic">
+<p class="mb-4">test box</p>
+</blockquote>
+<p class="mb-4"><strong class="font-semibold">Important:</strong></p>
+
+    </article>
+</div>
+      </section>
+    
+  
+</main>
+
+
+      <!-- Popup -->
+      <div id="popup" role="dialog" aria-modal="true"
+        class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-99">
+        <div class="bg-neutral-900 p-8 rounded-lg max-w-lg w-full relative">
+          <button type="button" id="close-popup" aria-label="Fermer la popup"
+            class="absolute top-3 right-3 text-neutral-400 hover:text-white transition">✕</button>
+          <div id="popup-content" class="text-neutral-200"></div>
+        </div>
+      </div>
+    </main>
+
+<footer class="bg-neutral-900 text-gray-300 relative">
+  <div class="max-w-screen-2xl mx-auto">
+    <div class="container mx-auto flex justify-between py-6 items-center text-center relative z-10 px-10">
+      <!-- Texte à gauche -->
+      <p class="text-white text-lg font-semibold drop-shadow-md">Impliquez, Financez, Accélérez !</p>
+      <!-- Liens à droite -->
+      <div class="space-x-4 text-sm">
+        
+          <a href="localhost:8080/legal" class="hover:text-white transition underline-offset-4 underline" target="_self">
+            Mentions légales
+          </a>
+        
+          <a href="localhost:8080/cgu" class="hover:text-white transition underline-offset-4 underline" target="_self">
+            Politique de confidentialité
+          </a>
+        
+      </div>
+    </div>
+    <!-- Attribution en bas -->
+    <div class="text-center pt-4 border-t border-gray-700 py-6 text-sm">
+      <p>&copy; <span id="current-year"></span> OneClick Invest. Tous droits réservés.</p>
+      <p>
+        Made with ❤️ by
+        <a href="https://www.linkedin.com/in/dylanenjolvin/" class="hover:text-white transition underline-offset-4 underline" target="_blank" rel="noopener noreferrer">
+          Dylan ENJOLVIN
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

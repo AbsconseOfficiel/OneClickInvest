@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_founder_founders",
+  "info": {
+    "displayName": "Founder",
+    "icon": "gate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cta.social",
+      "required": true,
+      "min": 1,
+      "max": 5
+    }
+  }
+}

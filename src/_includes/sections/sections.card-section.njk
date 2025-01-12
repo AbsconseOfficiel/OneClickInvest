@@ -1,0 +1,54 @@
+<div class="container mx-auto">
+  <h2 class="font-display text-4xl mb-14 max-w-[35rem]">
+    {% if section.title %}{{ section.title }}{% else %}Titre non disponible{% endif %}
+  </h2>
+
+  {% if section.cards and section.cards|length > 0 %}
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for card in section.cards %}
+    <article class="bg-neutral-900 p-9 py-6 rounded-2xl flex flex-col justify-between">
+      <header>
+        <h3 class="font-display text-3xl mb-4">
+          {% if card.title %}{{ card.title }}{% else %}Titre manquant{% endif %}
+        </h3>
+      </header>
+      <p class="text-neutral-400 mb-14 text-sm">
+        {% if card.description %}{{ card.description }}{% else %}Description absente{% endif %}
+      </p>
+      <footer>
+        {% if card.popup is not none and card.popup.content is not none %}
+        <button type="button"
+          class="open-popup group relative inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 ease-in-out mt-4 w-min cursor-pointer"
+          data-content="{{ card.popup.content|escape }}">
+          <span
+            class="overflow-hidden group-hover:ml-2 max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2 transition-all duration-500 ease-in-out whitespace-nowrap">
+            {% if card.button.title %}{{ card.button.title }}{% else %}Voir plus{% endif %}
+          </span>
+          <svg class="transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        {% else %}
+        <a class="group relative inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 ease-in-out mt-4 w-min"
+          href="{% if card.button.link %}{{ card.button.link }}{% else %}#{% endif %}">
+          <span
+            class="overflow-hidden group-hover:ml-2 max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2 transition-all duration-500 ease-in-out whitespace-nowrap">
+            {% if card.button.title %}{{ card.button.title }}{% else %}Voir plus{% endif %}
+          </span>
+          <svg class="transition-transform duration-300" width="25" height="25" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        {% endif %}
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-neutral-400">Aucune carte disponible.</p>
+  {% endif %}
+</div>

@@ -1,0 +1,56 @@
+{
+  "name": "one-click-invest",
+  "version": "0.1.1",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "start": "npm install",
+    "build": "npm run strapi-build",
+    "start-render": "concurrently \"npm run strapi-start\"",
+    "strapi-build": "strapi build",
+    "strapi-start": "strapi start",
+    "strapi-dev": "strapi develop",
+    "taiwind-build": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./_site/assets/styles.css",
+    "taiwind-watch": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./_site/assets/styles.css --watch",
+    "webhook-start": "node ./src/webhook.js",
+    "eleventy-build": "npx @11ty/eleventy",
+    "eleventy-serve": "npx @11ty/eleventy --serve",
+    "eleventy-serve-start": "npx @11ty/eleventy",
+    "start-all": "concurrently \"npm run strapi-start\" \"npm run eleventy-serve\" \"npm run webhook-start\" \"npm run taiwind-watch\"",
+    "dev": "concurrently \"npm run strapi-dev\" \"npm run eleventy-serve\" \"npm run webhook-start\" \"npm run taiwind-watch\""
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@strapi/plugin-cloud": "5.6.0",
+    "@strapi/plugin-users-permissions": "5.6.0",
+    "@strapi/strapi": "5.6.0",
+    "axios": "^1.7.9",
+    "better-sqlite3": "11.3.0",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.3.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "9cf11a86-08ad-4f3d-9af3-ba1cb1071739"
+  }
+}

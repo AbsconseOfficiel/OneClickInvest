@@ -1,0 +1,36 @@
+---
+pagination:
+  data: page.published.slug
+  size: 1
+  alias: page
+permalink: "/{{ page.slug | slugify }}/"
+---
+
+{% extends "layout.njk" %}
+
+{% block header %}
+  {% include "header/header.njk" %}
+{% endblock %}
+
+{% block content %}
+<main class="w-full px-4 pt-10">
+  {% if page.sections %}
+    {% for section in page.sections %}
+      <!-- Section principale -->
+      <section 
+        id="{{ section.__component }}"
+        class="w-full 
+          {% if section.__component == 'sections.hero-section' %} pb-10
+          {% elif section.__component == 'sections.card-section' %}my-16 bg-custom-blue p-10 rounded-3xl	
+          {% elif section.__component == 'sections.text-section' %}my-16 bg-neutral-900 p-10 rounded-3xl	
+          {% elif section.__component == 'sections.founder-section' %}my-16 bg-custom-blue p-10 rounded-3xl	
+          {% else %}my-32{% endif %}
+          max-w-screen-2xl mx-auto">
+          {% include "sections/" + section.__component + ".njk" %}
+      </section>
+    {% endfor %}
+  {% else %}
+    <p class="text-center text-red-400">Aucune section trouvée.</p>
+  {% endif %}
+</main>
+{% endblock %}

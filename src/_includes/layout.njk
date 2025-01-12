@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="/scripts.js" defer></script>
+  </head>
+  <body class="text-white font-text antialiased bg-neutral-950">
+    {% block header %}
+      {% include "header/header.njk" %}
+    {% endblock %}
+
+    <main>
+      {% block content %}{% endblock %}
+
+      <!-- Popup -->
+      <div id="popup" role="dialog" aria-modal="true"
+        class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-99">
+        <div class="bg-neutral-900 p-8 rounded-lg max-w-lg w-full relative">
+          <button type="button" id="close-popup" aria-label="Fermer la popup"
+            class="absolute top-3 right-3 text-neutral-400 hover:text-white transition">✕</button>
+          <div id="popup-content" class="text-neutral-200"></div>
+        </div>
+      </div>
+    </main>
+
+<footer class="bg-neutral-900 text-gray-300 relative">
+  <div class="max-w-screen-2xl mx-auto">
+    <div class="container mx-auto flex justify-between py-6 items-center text-center relative z-10 px-10">
+      <!-- Texte à gauche -->
+      <p class="text-white text-lg font-semibold drop-shadow-md">Impliquez, Financez, Accélérez !</p>
+      <!-- Liens à droite -->
+      <div class="space-x-4 text-sm">
+        {% for link in page.published.footer %}
+          <a href="{{ link.url }}" class="hover:text-white transition underline-offset-4 underline" target="{{ link.target | default('_self') }}">
+            {{ link.text }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Attribution en bas -->
+    <div class="text-center pt-4 border-t border-gray-700 py-6 text-sm">
+      <p>&copy; <span id="current-year"></span> OneClick Invest. Tous droits réservés.</p>
+      <p>
+        Made with ❤️ by
+        <a href="https://www.linkedin.com/in/dylanenjolvin/" class="hover:text-white transition underline-offset-4 underline" target="_blank" rel="noopener noreferrer">
+          Dylan ENJOLVIN
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
