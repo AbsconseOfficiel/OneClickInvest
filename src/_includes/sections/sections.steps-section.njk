@@ -1,0 +1,26 @@
+<div class="container mx-auto">
+    <h2 class="font-display text-4xl mb-14 max-w-[35rem]">{{ section.title }}</h2>
+    <!-- Container pour les étapes -->
+    <div class="relative flex justify-center">
+        <!-- Conteneur des cartes en défilement horizontal -->
+        <div class="flex justify-start overflow-x-auto snap-x snap-mandatory space-x-4 w-full custom-scroll pb-9">
+            {% for step in section.steps %}
+            <div class="snap-start relative flex flex-row justify-between w-[32rem] flex-shrink-0">
+                <!-- Conteneur de l'image avec filtre appliqué -->
+                <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center rounded-l-2xl overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/65 before:to-black/85 before:grayscale after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color">
+                    <img src="/public{{ step.icon.url }}" alt="{{ step.title }}" class="w-full h-full object-cover min-h-[100%] max-h-[100%]"/>
+                </div>
+                <!-- Titre et description alignés à droite -->
+                <div class="h-full bg-neutral-900 p-9 py-6 flex-1 rounded-r-2xl">
+                    <!-- Numéro d'étape -->
+                    <div class="mb-14">
+                        <span class="text-sm text-neutral-300">0{{ loop.index }}</span>
+                    </div>
+                    <h3 class="font-display text-3xl text-white mb-4">{{ step.title }}</h3>
+                    <p class="text-neutral-400 text-sm">{{ step.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

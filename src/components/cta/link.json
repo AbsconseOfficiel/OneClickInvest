@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_cta_links",
+  "info": {
+    "displayName": "link",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "internal",
+        "external",
+        "anchor"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_self",
+        "_blank"
+      ]
+    },
+    "anchor": {
+      "type": "enumeration",
+      "enum": [
+        "sections.card-section",
+        "sections.faq-section",
+        "sections.founder-section",
+        "sections.hero-section",
+        "sections.price-comparator",
+        "sections.statistics-section",
+        "sections.steps-section"
+      ]
+    }
+  }
+}

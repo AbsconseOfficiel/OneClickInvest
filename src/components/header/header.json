@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_header_headers",
+  "info": {
+    "displayName": "header",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cta.link"
+    }
+  }
+}

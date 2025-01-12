@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_popup_contents",
+  "info": {
+    "displayName": "popup Content",
+    "icon": "message",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

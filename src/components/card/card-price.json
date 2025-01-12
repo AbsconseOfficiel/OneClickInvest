@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_card_card_prices",
+  "info": {
+    "displayName": "card Price",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "setupCost": {
+      "type": "string"
+    },
+    "performanceFees": {
+      "type": "string",
+      "required": true
+    },
+    "maintenance": {
+      "type": "string",
+      "required": true
+    },
+    "isHighlighted": {
+      "type": "boolean"
+    }
+  }
+}

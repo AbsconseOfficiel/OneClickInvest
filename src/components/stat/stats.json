@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_stat_stats",
+  "info": {
+    "displayName": "stat",
+    "icon": "chartCircle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "suffix": {
+      "type": "string",
+      "required": true,
+      "default": "%"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<header class="fixed w-full left-0 z-50 text-sm backdrop-blur-lg bg-[#121212]/65">
+  <nav>
+    {% if page.published.header and page.published.header | length > 0 %}
+      <div class="max-w-screen-2xl mx-auto flex items-center justify-between py-2 px-4 md:px-12">
+        <!-- Logo -->
+        <a href="/" class="text-xl font-bold transition">OneClick Invest</a>
+
+        <!-- Navigation links (masqués sur mobile, affichés sur écran moyen et plus) -->
+        <div class="hidden md:flex justify-center space-x-6 text-gray-300 flex-1 text-center">
+          {% for link in page.published.header %}
+            {% set href = '' %}
+            {% if link.type == 'internal' %}
+              {% set href = link.url %}
+            {% elif link.type == 'external' %}
+              {% if link.url.startsWith('http://') or link.url.startsWith('https://') %}
+                {% set href = link.url %}
+              {% else %}
+                {% set href = 'https://' + link.url %}
+              {% endif %}
+            {% elif link.type == 'anchor' %}
+              {% set href = '#' + link.anchor %}
+            {% endif %}
+
+            <a 
+              href="{{ href }}" 
+              target="{{ link.target | default('_self') }}" 
+              class="hover:text-white transition">
+              {{ link.text | default('Lien sans texte') }}
+            </a>
+          {% endfor %}
+        </div>
+
+        <!-- Menu burger (visible uniquement sur mobile) -->
+        <button class="md:hidden text-gray-300 hover:text-white transition" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <!-- Buttons (log in et contact) -->
+        <div class="hidden md:flex items-center space-x-4">
+          </div>
+      </div>
+
+      <!-- Mobile menu (masqué par défaut, visible lorsque le burger est cliqué) -->
+      <div class="hidden flex-col bg-[#121212]/90 text-gray-300 md:hidden items-center" id="mobile-menu">
+      {% for link in page.header %}
+            {% set href = '' %}
+            {% if link.type == 'internal' %}
+              {% set href = link.url %}
+            {% elif link.type == 'external' %}
+              {% if link.url.startsWith('http://') or link.url.startsWith('https://') %}
+                {% set href = link.url %}
+              {% else %}
+                {% set href = 'https://' + link.url %}
+              {% endif %}
+            {% elif link.type == 'anchor' %}
+              {% set href = '#' + link.anchor %}
+            {% endif %}
+          <a 
+            href="{{ href }}" 
+            target="{{ link.target | default('_self') }}" 
+            class="block py-2 px-4 border-b border-gray-600 hover:bg-gray-700 hover:text-white transition">
+            {{ link.text | default('Lien sans texte') }}
+          </a>
+        {% endfor %}
+        <a href="/login" class="block py-2 px-4 hover:bg-gray-700 hover:text-white transition">Log in</a>
+        <a href="/contact" class="block py-2 px-4 hover:bg-gray-700 hover:text-white transition">Talk to an Expert</a>
+      </div>
+    {% else %}
+      <p class="text-center text-red-400">Aucun lien de header trouvé.</p>
+    {% endif %}
+  </nav>
+</header>

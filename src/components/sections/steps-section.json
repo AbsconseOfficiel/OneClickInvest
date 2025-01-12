@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_steps_sections",
+  "info": {
+    "displayName": "Steps Section",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "steps": {
+      "displayName": "steps",
+      "type": "component",
+      "repeatable": true,
+      "component": "step.steps",
+      "required": true,
+      "min": 1
+    }
+  }
+}

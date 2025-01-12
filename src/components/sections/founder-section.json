@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_founder_sections",
+  "info": {
+    "displayName": "Founder Section",
+    "icon": "gate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "founders": {
+      "type": "component",
+      "repeatable": false,
+      "component": "founder.founder",
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": false,
+      "component": "card.cards",
+      "required": true
+    }
+  }
+}

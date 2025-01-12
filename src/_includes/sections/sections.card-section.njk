@@ -1,0 +1,40 @@
+<div class="container mx-auto">
+    <h2 class="font-display text-4xl mb-14 max-w-[35rem]">{{ section.title }}</h2>
+    {% if section.cards %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for card in section.cards %}
+        <div class="bg-neutral-900 p-9 py-6 rounded-2xl flex flex-col justify-between">
+            <div>
+                <h3 class="font-display text-3xl mb-4">{{ card.title }}</h3>
+                <p class="text-neutral-400 mb-14 text-sm">{{ card.description }}</p>
+            </div>
+            {% if card.popup.content is none %}
+            <a class="group relative inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 ease-in-out mt-4 w-min" href="{{ card.button.link }}">
+                <span class="overflow-hidden max-w-0 opacity-0 group-hover:ml-2 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2 transition-all duration-500 ease-in-out whitespace-nowrap">{{ card.button.title }}</span>
+                <svg class="transition-transform duration-300"width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            {% else %}
+            <!-- Bouton avec Popup -->
+            <a href="{{ card.button.link }}" class="group relative inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 ease-in-out mt-4 w-min" {% if card.popup.content %}onclick="openPopup('{{ card.popup.content }}'); return false;"{% endif %}>
+                <span class="overflow-hidden group-hover:ml-2 max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2 transition-all duration-500 ease-in-out whitespace-nowrap">{{ card.button.title }}</span>
+                <svg class="transition-transform duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <!-- Pop-up Template -->
+            <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                <div class="bg-neutral-900 p-8 rounded-lg max-w-lg w-full relative">
+                    <button class="absolute top-3 right-3 text-neutral-400 hover:text-white transition" onclick="closePopup()">✕</button>
+                    <div id="popup-content" class="text-neutral-200">
+                        <!-- Le contenu de la pop-up sera inséré ici -->
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
